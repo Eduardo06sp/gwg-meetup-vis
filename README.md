@@ -19,7 +19,6 @@ To use the script, you'll need:
   * `pip`
 
 I used an [Anaconda](https://www.anaconda.com/) virtual environment.
-
 To mimic my setup, install Anaconda and then create the virtual environment:
 
 ```shell
