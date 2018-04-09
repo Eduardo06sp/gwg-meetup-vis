@@ -1,6 +1,7 @@
 import googlemaps
 import json, csv
 import os
+import sys
 
 if __name__ == "__main__":
     if os.path.exists('data/geocoded/output.txt'):
@@ -16,11 +17,14 @@ if __name__ == "__main__":
         reader = csv.reader(meetups_data)
         # Filter out entries that don't have city/state.
         # x[6] = City/State
-        filtered_data = filter(lambda x: x[6] is not '', reader)
+        filtered_data = filter(lambda x: x[5] is not '', reader)
+
+        # Use a set to filter out any duplicates
+        unique_data = set([x[5] for x in filtered_data])
 
         # skip the first entry since it's the csv header fields
-        for num, data_point in enumerate(filtered_data):
-            if num == 1:
+        for num, data_point in enumerate(unique_data):
+            if num == 0:
                 continue
 
             geocoded = gmaps.geocode(data_point[6])
