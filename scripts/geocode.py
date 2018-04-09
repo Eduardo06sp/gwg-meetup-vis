@@ -23,11 +23,11 @@ if __name__ == "__main__":
         unique_data = set([x[5] for x in filtered_data])
 
         # skip the first entry since it's the csv header fields
-        for num, data_point in enumerate(unique_data):
+        for num, city_state in enumerate(unique_data):
             if num == 0:
                 continue
 
-            geocoded = gmaps.geocode(data_point[6])
+            geocoded = gmaps.geocode(city_state)
 
             if len(geocoded) > 0:
                 geocoded = geocoded[0]
