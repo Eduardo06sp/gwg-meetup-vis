@@ -2,37 +2,54 @@ import googlemaps
 import json, csv
 import os
 
+def remove_previous_output(path):
+    if os.path.exists(path):
+        os.remove(path)
+
+def get_csv_data(path):
+    with open(path) as csvdata:
+        reader = csv.reader(csvdata)
+        return list(reader)
+
+def load_key(path):
+    with open(path) as secret:
+        return json.load(secret)['pykey']
+
+def geocode_data(data, key):
+    gmaps = googlemaps.Client(key=key)
+    geocoded_list = list()
+    for city_state in data:
+        geocoded = gmaps.geocode(city_state)
+
+        if not len(geocoded) > 0:
+            continue
+
+        lat = geocoded[0]['geometry']['location']['lat']
+        lng = geocoded[0]['geometry']['location']['lng']
+        geocoded_list.append("{},{}".format(lat, lng))
+    return geocoded_list
+
+def write_data(path, data):
+    with open(path, 'w') as outfile:
+        for geo_location in data:
+            outfile.write(geo_location+"%7C")
+
+
 if __name__ == "__main__":
-    if os.path.exists('data/geocoded/output.txt'):
-        os.remove('data/geocoded/output.txt')
+    remove_previous_output('data/geocoded/output.txt')
+    __key = load_key('secret.json')
 
-    __key = None
-    with open('secret.json') as secret:
-        __key = json.load(secret)['pykey']
+    csv_data = get_csv_data('data/raw/meetups.csv')
 
-    gmaps = googlemaps.Client(key=__key)
+    # Filter out entries that don't have city/state.
+    filtered_data = list(filter(lambda x: x[5] is not '', csv_data))
 
-    with open('data/raw/meetups.csv') as meetups_data:
-        reader = csv.reader(meetups_data)
-        # Filter out entries that don't have city/state.
-        # x[5] = City/State
-        filtered_data = filter(lambda x: x[5] is not '', reader)
+    # Remove the headers
+    del filtered_data[0]
 
-        # Use a set to filter out any duplicates
-        unique_data = set([x[5] for x in filtered_data])
+    # Remove duplicates to make processing faster/cheaper
+    unique_data = set([x[5] for x in filtered_data])
 
-        # skip the first entry since it's the csv header fields
-        for num, city_state in enumerate(unique_data):
-            if num == 0:
-                continue
+    coded_data = geocode_data(unique_data, __key)
 
-            geocoded = gmaps.geocode(city_state)
-
-            if len(geocoded) > 0:
-                geocoded = geocoded[0]
-            else:
-                continue
-
-            lat = geocoded['geometry']['location']['lat']
-            lng = geocoded['geometry']['location']['lng']
-            print("{}, {}".format(lat, lng), file=open('data/geocoded/output.txt', 'a'))
+    write_data('data/geocoded/output.txt', coded_data)
