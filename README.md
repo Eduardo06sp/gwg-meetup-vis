@@ -26,5 +26,21 @@ To mimic my setup, install Anaconda and then create the virtual environment:
 $ conda create -n maps python=3.6 -y -q
 $ source activate maps
 (maps) $ pip install -U googlemaps
+```
+
+Next, you'll need to get an [API key](https://github.com/googlemaps/google-maps-services-python#api-keys).
+Once you have obtained an API key, create a file named `secret.json` and add the following entry:
+
+```json
+{"pykey": "YOUR_API_KEY"}
+```
+
+`scripts/geocode.py` will read this `pykey` field to obtain your API key at run time.
+
+**Note:** `secret.json` is ignored by `.gitignore`. We don't want your secrets in our repo :smile:
+
+Finally, run `scripts/geocode.py`:
+
+```shell
 (maps) $ python scripts/geocode.py
 ```
