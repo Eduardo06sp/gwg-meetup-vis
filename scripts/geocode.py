@@ -1,7 +1,6 @@
 import googlemaps
 import json, csv
 import os
-import sys
 
 if __name__ == "__main__":
     if os.path.exists('data/geocoded/output.txt'):
