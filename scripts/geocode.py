@@ -16,7 +16,7 @@ if __name__ == "__main__":
     with open('data/raw/meetups.csv') as meetups_data:
         reader = csv.reader(meetups_data)
         # Filter out entries that don't have city/state.
-        # x[6] = City/State
+        # x[5] = City/State
         filtered_data = filter(lambda x: x[5] is not '', reader)
 
         # Use a set to filter out any duplicates
