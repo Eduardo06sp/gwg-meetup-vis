@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Grow with Google Udacity Meetups 2018</title>
+    <meta name="viewport" content="initial-scale=1.0">
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css", href="css/style.css">
+  </head>
+  <body>
+    <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
+      <a class="navbar-brand" href="#">Grow with Google Udacity Meetups</a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExampleDefault" aria-controls="navbarsExampleDefault" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <div class="collapse navbar-collapse" id="navbarsExampleDefault">
+        <ul class="navbar-nav mr-auto">
+          <li class="nav-item">
+            <a target="_blank" class="nav-link" href="https://sites.google.com/udacity.com/gwgdevscholarship/home">Scholarship Home</a>
+          </li>
+          <li class="nav-item">
+            <a target="_blank" class="nav-link" href="https://docs.google.com/forms/d/e/1FAIpQLSf4vYQ5a3t2gJKCHM1O8mYAbo3KiPViIieWfEu_lYixPSlpIg/viewform">Add your meetup</a>
+          </li>
+          <li class="nav-item">
+            <a target="_blank" class="nav-link" href="https://github.com/tlkamp/gwg-meetup-vis/issues">Report a bug</a>
+          </li>
+        </ul>
+      </div>
+    </nav>
+    <div id="map"></div>
+    <div id="details"></div>
+    <footer class="fixed-bottom text-center">
+      <p>Built with <a href="https://getbootstrap.com/">Bootstrap</a> and <a href="https://developers.google.com/maps/">Google Maps</a></p>
+    </footer>
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.0/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js"></script>
+    <script src="js/script.js"></script>
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBjDZl30bGu7NF2H6g7Q1YQu3DEmy1y3-8&callback=initMap"
+    async defer></script>
+  </body>
+</html>

@@ -1,0 +1,131 @@
+// generated using scripts/geocode.py
+const locations = [
+	{title: 'La Vista, NE', location:{lat: 41.18388780000001, lng: -96.031127}},
+	{title: 'Grand Rapids, MI', location:{lat: 42.9633599, lng: -85.6680863}},
+	{title: 'Phoenix, AZ', location:{lat: 33.4483771, lng: -112.0740373}},
+	{title: 'Hartford, CT', location:{lat: 41.7658043, lng: -72.6733723}},
+	{title: 'San Jose, CA', location:{lat: 37.3382082, lng: -121.8863286}},
+	{title: 'Annandale, VA', location:{lat: 38.8303905, lng: -77.1963703}},
+	{title: 'Columbia, SC ', location:{lat: 34.0007104, lng: -81.0348144}},
+	{title: 'Philadelphia, PA ', location:{lat: 39.9525839, lng: -75.1652215}},
+	{title: 'Wilmington, DE', location:{lat: 39.7390721, lng: -75.5397878}},
+	{title: 'Irving, TX', location:{lat: 32.8140177, lng: -96.9488945}},
+	{title: 'Colorado Springs, CO', location:{lat: 38.8338816, lng: -104.8213634}},
+	{title: 'Bothell, WA', location:{lat: 47.76095, lng: -122.2055884}},
+	{title: 'Los Gatos, CA', location:{lat: 37.2358078, lng: -121.9623751}},
+	{title: 'Nashville, TN', location:{lat: 36.1626638, lng: -86.7816016}},
+	{title: 'Boston, MA', location:{lat: 42.3600825, lng: -71.0588801}},
+	{title: 'Pittsburgh, PA', location:{lat: 40.44062479999999, lng: -79.9958864}},
+	{title: 'Fort Lauderdale, FL', location:{lat: 26.1224386, lng: -80.13731740000001}},
+	{title: 'Giza', location:{lat: 30.0130557, lng: 31.2088526}},
+	{title: 'San Mateo, CA', location:{lat: 37.5629917, lng: -122.3255254}},
+	{title: 'Bel Air, MD', location:{lat: 39.5359406, lng: -76.34829309999999}},
+	{title: 'Manhattan, NY', location:{lat: 40.7830603, lng: -73.9712488}},
+	{title: 'Orinda, CA', location:{lat: 37.8771476, lng: -122.1796888}},
+	{title: 'Walnut Creek, CA ', location:{lat: 37.9100783, lng: -122.0651819}},
+	{title: 'Redmond, WA', location:{lat: 47.6739881, lng: -122.121512}},
+	{title: 'Cincinnati, OH', location:{lat: 39.1031182, lng: -84.5120196}},
+	{title: 'Oklahoma, OK', location:{lat: 35.0077519, lng: -97.092877}},
+	{title: 'Las Vegas, NV', location:{lat: 36.1699412, lng: -115.1398296}},
+	{title: 'Denver, CO', location:{lat: 39.7392358, lng: -104.990251}},
+	{title: 'Long Island City , NY', location:{lat: 40.744679, lng: -73.9485424}},
+	{title: 'Chicago, IL', location:{lat: 41.8781136, lng: -87.6297982}},
+	{title: 'Cape Girardeau, MO', location:{lat: 37.3058839, lng: -89.51814759999999}},
+	{title: 'Tucson, AZ', location:{lat: 32.2226066, lng: -110.9747108}},
+	{title: 'Albuquerque, NM', location:{lat: 35.0843859, lng: -106.650422}},
+	{title: 'Austin, TX', location:{lat: 30.267153, lng: -97.7430608}},
+	{title: 'Newport Beach, CA', location:{lat: 33.6188829, lng: -117.9298493}},
+	{title: 'Pasedana, CA', location:{lat: 34.1477849, lng: -118.1445155}},
+	{title: 'Indianapolis, IN', location:{lat: 39.768403, lng: -86.158068}},
+	{title: 'Boulder, CO', location:{lat: 40.0149856, lng: -105.2705456}},
+	{title: 'Omaha, NE', location:{lat: 41.2565369, lng: -95.9345034}},
+	{title: 'Morgantown, WV', location:{lat: 39.629526, lng: -79.95589679999999}},
+	{title: 'Plymouth, MI', location:{lat: 42.3714253, lng: -83.4702132}},
+	{title: 'Arlington, VA', location:{lat: 38.8816208, lng: -77.09098089999999}},
+	{title: 'Deerfield Beach, FL', location:{lat: 26.3184123, lng: -80.09976569999999}},
+	{title: 'Rockville, MD', location:{lat: 39.0839973, lng: -77.1527578}},
+	{title: 'Antioch, TN', location:{lat: 36.0597177, lng: -86.6715948}},
+	{title: 'Missouri, MO', location:{lat: 37.9642529, lng: -91.8318334}},
+	{title: 'Charlottesville, VA,', location:{lat: 38.0293059, lng: -78.47667810000002}},
+	{title: 'Portland, OR', location:{lat: 45.5230622, lng: -122.6764815}},
+	{title: 'New York City, NY', location:{lat: 40.7127753, lng: -74.0059728}},
+	{title: 'Cambridge, MA', location:{lat: 42.3736158, lng: -71.10973349999999}},
+	{title: 'Argyle, TX', location:{lat: 33.1212321, lng: -97.1833475}},
+	{title: 'Philadelphia, PA', location:{lat: 39.9525839, lng: -75.1652215}},
+	{title: 'Dallas, TX', location:{lat: 32.7766642, lng: -96.79698789999999}},
+	{title: 'Miami, FL', location:{lat: 25.7616798, lng: -80.1917902}},
+	{title: 'Reno, NV', location:{lat: 39.5296329, lng: -119.8138027}},
+	{title: 'Selinsgrove, PA', location:{lat: 40.7989735, lng: -76.8621935}},
+	{title: 'Atlanta, GA', location:{lat: 33.7489954, lng: -84.3879824}},
+	{title: 'Morrisville, NC', location:{lat: 35.823483, lng: -78.8255621}},
+	{title: 'Queens, NY ', location:{lat: 40.7282239, lng: -73.7948516}},
+	{title: 'Houston, TX', location:{lat: 29.7604267, lng: -95.3698028}},
+	{title: 'Mountain View, CA', location:{lat: 37.3860517, lng: -122.0838511}},
+	{title: 'Salem, OR', location:{lat: 44.9428975, lng: -123.0350963}},
+	{title: 'San Diego, CA', location:{lat: 32.715738, lng: -117.1610838}},
+	{title: 'Kirkland, WA', location:{lat: 47.6768927, lng: -122.2059833}},
+	{title: 'Douglas, AK', location:{lat: 58.2777689, lng: -134.4080527}},
+	{title: 'Royal Oak, MI', location:{lat: 42.4894801, lng: -83.1446485}},
+	{title: 'Saint Charles, MO', location:{lat: 38.7881062, lng: -90.4974359}},
+	{title: 'San Francisco, CA', location:{lat: 37.7749295, lng: -122.4194155}},
+	{title: 'Mesa, AZ', location:{lat: 33.4151843, lng: -111.8314724}},
+	{title: 'Bellevue, WA', location:{lat: 47.6101497, lng: -122.2015159}},
+	{title: 'San Antonio, TX', location:{lat: 29.4241219, lng: -98.49362819999999}},
+	{title: 'Kansas City, MO', location:{lat: 39.0997265, lng: -94.5785667}},
+	{title: 'Los Angeles, CA', location:{lat: 34.0522342, lng: -118.2436849}},
+	{title: 'Newcastle, WA', location:{lat: 47.5377028, lng: -122.1657965}},
+	{title: 'College Station, TX', location:{lat: 30.627977, lng: -96.3344068}},
+	{title: 'Raleigh, NC', location:{lat: 35.7795897, lng: -78.6381787}},
+	{title: 'Mercer Island, WA', location:{lat: 47.5706548, lng: -122.2220674}},
+	{title: 'Plano, TX', location:{lat: 33.0198431, lng: -96.6988856}},
+	{title: 'Seattle, WA', location:{lat: 47.6062095, lng: -122.3320708}},
+	{title: 'Long Beach, CA', location:{lat: 33.7700504, lng: -118.1937395}},
+	{title: 'Lemon Grove, CA', location:{lat: 32.7425516, lng: -117.0314172}},
+	{title: 'Columbus, OH', location:{lat: 39.9611755, lng: -82.99879419999999}},
+	{title: 'Hillsboro, OR', location:{lat: 45.5228939, lng: -122.989827}},
+	{title: 'Norfolk, VA', location:{lat: 36.8507689, lng: -76.28587259999999}},
+	{title: 'Rancho Cucamonga, CA', location:{lat: 34.10639889999999, lng: -117.5931084}},
+	{title: 'Washington, DC', location:{lat: 38.9071923, lng: -77.0368707}},
+	{title: 'Oakland Park, FL', location:{lat: 26.1723065, lng: -80.1319893}},
+	{title: 'Charlotte, NC', location:{lat: 35.2270869, lng: -80.8431267}},
+	{title: 'El Monte, CA', location:{lat: 34.0686206, lng: -118.0275667}},
+	{title: 'Newark, NJ', location:{lat: 40.735657, lng: -74.1723667}},
+	{title: 'Baltimore, MD', location:{lat: 39.2903848, lng: -76.6121893}},
+	{title: 'St Louis, MO', location:{lat: 38.6270025, lng: -90.19940419999999}},
+	{title: 'Milwaukee, WI', location:{lat: 43.0389025, lng: -87.9064736}},
+];
+
+// initialize as var so we can use it as our callback function
+var initMap = () => {
+  const map = new google.maps.Map(document.getElementById('map'),{
+    // this lat/long combo is the center of the contiguous 48 states of the US
+    center: {lat: 39.828175, lng: -98.5795},
+    zoom: 4
+  });
+
+  for(let i = 0; i < locations.length; i++) {
+    const position = locations[i].location;
+    const title = locations[i].title;
+
+    const marker = new google.maps.Marker({
+      map: map,
+      position: position,
+      title: title,
+      id: i
+    });
+
+    marker.addListener('click', function() {
+      populateInfoWindow(map, this, new google.maps.InfoWindow());
+    });
+  }
+}
+
+// Similar to the Udacity Google Maps APIs course
+const populateInfoWindow = (map, marker, infoWindow) => {
+  infoWindow.marker = marker;
+  infoWindow.setContent(`<div>${marker.title}</div>`);
+  infoWindow.open(map, marker);
+  infoWindow.addListener('closeclick', function() {
+    infoWindow.marker = null;
+  });
+}

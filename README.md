@@ -43,3 +43,10 @@ Finally, run `scripts/geocode.py`:
 ```shell
 (maps) $ python scripts/geocode.py
 ```
+
+## Displaying the Data
+We are using [Google Maps](https://developers.google.com/maps/get-started/) to display the data.
+
+**This is a work-in-progress**
+
+In order to get the map to display, you'll need to insert your own API key into the URL: `key=YOUR_API_KEY`.

@@ -26,17 +26,23 @@ def geocode_data(data, key):
 
         lat = geocoded[0]['geometry']['location']['lat']
         lng = geocoded[0]['geometry']['location']['lng']
-        geocoded_list.append("{},{}".format(lat, lng))
+        # {title: citystate, location: {lat: , lng: }},
+        fmtstr = "{{title: '{}', location:{{lat: {}, lng: {}}}}},".format(city_state, lat, lng)
+        geocoded_list.append(fmtstr)
     return geocoded_list
 
 def write_data(path, data):
     with open(path, 'w') as outfile:
+        outfile.write("var locations = [\n")
+
         for geo_location in data:
-            outfile.write(geo_location+"%7C")
+            outfile.write("\t"+geo_location+"\n")
+
+        outfile.write("];")
 
 
 if __name__ == "__main__":
-    remove_previous_output('data/geocoded/output.txt')
+    remove_previous_output('data/geocoded/locations.js')
     __key = load_key('secret.json')
 
     csv_data = get_csv_data('data/raw/meetups.csv')
@@ -52,4 +58,4 @@ if __name__ == "__main__":
 
     coded_data = geocode_data(unique_data, __key)
 
-    write_data('data/geocoded/output.txt', coded_data)
+    write_data('data/geocoded/locations.js', coded_data)

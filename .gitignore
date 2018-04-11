@@ -1,3 +1,4 @@
 *.pyc
 secret.json
 output.txt
+locations.js
