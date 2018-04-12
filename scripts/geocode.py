@@ -33,7 +33,7 @@ def geocode_data(data_dict, key):
 
 def write_data(path, data):
     with open(path, 'w') as outfile:
-        outfile.write("var locations = [\n")
+        outfile.write("const locations = [\n")
 
         for geo_location in data:
             outfile.write("\t"+geo_location+"\n")
