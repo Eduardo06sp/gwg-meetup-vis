@@ -16,10 +16,7 @@ footer {
   height: 100%;
 }
 
-a, a:hover , a:visited {
+p > a, p > a:hover, P > a:visited {
   color: black;
-}
-
-.link {
   text-decoration: underline;
 }
