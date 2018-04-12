@@ -1,5 +1,5 @@
 // generated using scripts/geocode.py
-var locations = [
+const locations = [
 	{title: 'Manhattan, NY', location:{lat: 40.7830603, lng: -73.9712488}, track: ['Front End']},
 	{title: 'Chicago, IL', location:{lat: 41.8781136, lng: -87.6297982}, track: ['Android Dev', 'Android Basics']},
 	{title: 'Indianapolis, IN', location:{lat: 39.768403, lng: -86.158068}, track: ['Track Unspecified', 'Android Basics', 'Front End']},
