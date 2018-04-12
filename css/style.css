@@ -9,12 +9,9 @@ footer {
     height: 2em;
     bottom: 0;
     width: 100%;
-}
-
-#details {
-  padding-top: 1%;
+    background: rgba(200, 200, 200, 0.5);
 }
 
 #map {
-  height: 60%;
+  height: 100%;
 }
